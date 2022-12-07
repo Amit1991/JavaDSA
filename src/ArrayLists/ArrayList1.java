@@ -21,10 +21,22 @@ public class ArrayList1 {
         Collections.addAll(arrayList1, data);
         System.out.println(arrayList1);
 
+        arrayList1.add(59);
+        arrayList1.stream().forEach(a -> System.out.print(a + " "));
+        System.out.println("");
+        arrayList1.add(4, 91);
+        arrayList1.stream().forEach(a -> System.out.print(a + " "));
+        System.out.println("");
+        arrayList1.set(4, 99);
+        arrayList1.stream().forEach(a -> System.out.print(a + " "));
+
         arrayList1.stream().forEach(System.out::println);
         arrayList1.stream().sorted().forEach(System.out::println);
         arrayList1.stream().filter(a -> a%2 ==0).forEach(System.out::println);
         int index = 2;
         arrayList1.stream().skip(index).limit(1).forEach(System.out::println);
+
+        /* Remove even numbers from list */
+        arrayList1.stream().filter(a -> a%2 == 1).sorted().forEach(a -> System.out.print(a + " "));
     }
 }
